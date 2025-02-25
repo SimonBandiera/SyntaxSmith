@@ -1,19 +1,16 @@
-cmake_minimum_required(VERSION 3.27.9)
-project(IdOp)
+cmake_minimum_required(VERSION 3.20)
+project(SyntaxSmith VERSION 0.0.1 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-#include_directories(examples)
 include_directories(includes)
 
-#add_custom_target(preprocess
-#        COMMAND g++ -E -P
-#        -I${CMAKE_CURRENT_SOURCE_DIR}/include
-#        -I${Boost_INCLUDE_DIRS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/examples/IdOpExamples.cpp
-#        -o IdOpExamples.cpp
-#        COMMENT "Generating preprocessed output for IdOpExamples.cpp"
-#)
+add_library(SyntaxSmith INTERFACE)
 
-add_executable(SyntaxSmithExamples
+target_include_directories(SyntaxSmith INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/includes)
+
+if (CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    add_executable(SyntaxSmithExamples
         example/simpleExamples.cpp)
+endif()
