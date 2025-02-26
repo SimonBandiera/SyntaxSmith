@@ -1,3 +1,4 @@
+#pragma once
 #define CLASS(keyword, function)                                                        \
     CREATE_CLASS(keyword##Class, MEMBERS_FUNCTIONS(), MEMBERS_VARIABLES(function))      \
     CREATE_MEMBER_FUNCTION(template <typename T> keyword##Class,                        \

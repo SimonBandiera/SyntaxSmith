@@ -1,3 +1,4 @@
+#pragma once
 #define CLASS_ONE_SIDE(keyword, function)                                                        \
     CREATE_CLASS(keyword##Class, MEMBERS_FUNCTIONS_ONE_SIDE(), MEMBERS_VARIABLES_ONE_SIDE(function))      \
 

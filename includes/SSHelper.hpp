@@ -1,3 +1,4 @@
+#pragma once
 #define CREATE_CLASS(name, publicMembers, privateMembers)   \
     class name {                                            \
     public:                                                 \
