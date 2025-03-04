@@ -3,6 +3,7 @@
     #include "SSBase.hpp"
     #include "SSOneSide.hpp"
     #include "SSHelper.hpp"
+    #include "SSNoArgs.hpp"
     #include <functional>
 
 template <typename T>
@@ -20,5 +21,7 @@ struct FunctionInfo<R(*)(first, Args...)> {
 #define CREATE_ONE_SIDE_OPERATOR(keyword, function)     \
     CLASS_ONE_SIDE(keyword, function)                   \
 
+#define CREATE_NO_ARGS_OPERATOR(keyword, function)      \
+    CLASS_NOARGS(keyword, function)                     \
 
 #endif
